@@ -15,3 +15,18 @@
     $menu.classList.remove("is-active");
   });
 })(document);
+
+((d) => {
+  d.addEventListener("click", (e) => {
+    const $addBtn = d.querySelector(".container__buttons .add"),
+      $subtractBtn = d.querySelector(".container__buttons .subtract"),
+      $span = d.querySelector(".container__buttons span");
+    if (e.target === $addBtn) {
+      $span.textContent = Number($span.textContent) + 1;
+    }
+
+    if (e.target === $subtractBtn) {
+      $span.textContent = Number($span.textContent) - 1;
+    }
+  });
+})(document);
